@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-A 1.8V output LDO Regulator designed to operate via 2.45GHz RF energy harvesting
+A 1.8V output LDO Regulator designed to operate via 2.45GHz RF energy harvesting.
 
 ## How to test
 
-Connecting an antenna to a network of suitable impedance, correctly feeding the reference and Ibias pins
+Connecting an antenna to a network of suitable impedance, correctly feeding the reference and Ibias pins.
 
 ## External hardware
 
-300 Ohms impedance antenna together with an LT matching network
+300 Ohms impedance antenna together with an LT matching network.
