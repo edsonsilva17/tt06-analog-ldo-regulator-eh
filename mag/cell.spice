@@ -1,0 +1,32 @@
+* NGSPICE file created from cell.ext - technology: sky130A
+
+.subckt sky130_fd_pr__pfet_01v8_lvt_3F9YD3 a_n349_n800# a_n163_n897# a_163_n800# a_221_n897#
++ a_n93_n800# w_n487_n1019# a_n35_n897# a_93_n897# a_35_n800# a_n291_n897# a_291_n800#
++ a_n221_n800#
+X0 a_n93_n800# a_n163_n897# a_n221_n800# w_n487_n1019# sky130_fd_pr__pfet_01v8_lvt ad=2.32e+12p pd=1.658e+07u as=2.32e+12p ps=1.658e+07u w=8e+06u l=350000u
+X1 a_291_n800# a_221_n897# a_163_n800# w_n487_n1019# sky130_fd_pr__pfet_01v8_lvt ad=2.32e+12p pd=1.658e+07u as=2.32e+12p ps=1.658e+07u w=8e+06u l=350000u
+X2 a_n221_n800# a_n291_n897# a_n349_n800# w_n487_n1019# sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=2.32e+12p ps=1.658e+07u w=8e+06u l=350000u
+X3 a_35_n800# a_n35_n897# a_n93_n800# w_n487_n1019# sky130_fd_pr__pfet_01v8_lvt ad=2.32e+12p pd=1.658e+07u as=0p ps=0u w=8e+06u l=350000u
+X4 a_163_n800# a_93_n897# a_35_n800# w_n487_n1019# sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=8e+06u l=350000u
+.ends
+
+.subckt sky130_fd_pr__cap_mim_m3_1_3HBNLG c1_n3050_n3000# m3_n3150_n3100#
+X0 c1_n3050_n3000# m3_n3150_n3100# sky130_fd_pr__cap_mim_m3_1 l=3e+07u w=3e+07u
+.ends
+
+.subckt sky130_fd_pr__cap_mim_m3_1_3MBNLG c1_n3050_n9300# m3_n3150_n9400#
+X0 c1_n3050_n9300# m3_n3150_n9400# sky130_fd_pr__cap_mim_m3_1 l=3e+07u w=3e+07u
+X1 c1_n3050_n9300# m3_n3150_n9400# sky130_fd_pr__cap_mim_m3_1 l=3e+07u w=3e+07u
+X2 c1_n3050_n9300# m3_n3150_n9400# sky130_fd_pr__cap_mim_m3_1 l=3e+07u w=3e+07u
+.ends
+
+.subckt cell ground o i
+Xsky130_fd_pr__pfet_01v8_lvt_3F9YD3_0 m1_n620_520# m1_n620_520# m1_n620_520# m1_n620_520#
++ m1_n620_520# m1_n620_520# m1_n620_520# m1_n620_520# ground m1_n620_520# ground ground
++ sky130_fd_pr__pfet_01v8_lvt_3F9YD3
+Xsky130_fd_pr__pfet_01v8_lvt_3F9YD3_1 o o o o o o o o m1_n620_520# o m1_n620_520#
++ m1_n620_520# sky130_fd_pr__pfet_01v8_lvt_3F9YD3
+XXC2 m1_n620_520# i sky130_fd_pr__cap_mim_m3_1_3HBNLG
+XXC3 o ground sky130_fd_pr__cap_mim_m3_1_3MBNLG
+.ends
+

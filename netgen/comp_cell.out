@@ -1,0 +1,55 @@
+
+Circuit 1 cell sky130_fd_pr__pfet_01v8_lvt and Circuit 2 cell sky130_fd_pr__pfet_01v8_lvt are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_lvt is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_lvt is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8_lvt     |Circuit 2: sky130_fd_pr__pfet_01v8_lvt     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8_lvt and sky130_fd_pr__pfet_01v8_lvt are equivalent.
+
+Circuit 1 cell sky130_fd_pr__cap_mim_m3_1 and Circuit 2 cell sky130_fd_pr__cap_mim_m3_1 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__cap_mim_m3_1      |Circuit 2: sky130_fd_pr__cap_mim_m3_1      
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__cap_mim_m3_1 and sky130_fd_pr__cap_mim_m3_1 are equivalent.
+Flattening unmatched subcell sky130_fd_pr__pfet_01v8_lvt_3F9YD3 in circuit cell (0)(2 instances)
+Flattening unmatched subcell sky130_fd_pr__cap_mim_m3_1_3HBNLG in circuit cell (0)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__cap_mim_m3_1_3MBNLG in circuit cell (0)(1 instance)
+
+Class cell (0):  Merged 10 parallel devices.
+Subcircuit summary:
+Circuit 1: cell                            |Circuit 2: cell                            
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_01v8_lvt (10->2)        |sky130_fd_pr__pfet_01v8_lvt (2)            
+sky130_fd_pr__cap_mim_m3_1 (4->2)          |sky130_fd_pr__cap_mim_m3_1 (4->2)          
+Number of devices: 4                       |Number of devices: 4                       
+Number of nets: 4                          |Number of nets: 4                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: cell                            |Circuit 2: cell                            
+-------------------------------------------|-------------------------------------------
+i                                          |i                                          
+o                                          |o                                          
+ground                                     |ground                                     
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes cell and cell are equivalent.
+
+Final result: Circuits match uniquely.
+.

@@ -1,0 +1,51 @@
+** sch_path: /foss/designs/cobaia/xschem/multiplier.sch
+**.subckt multiplier
+E1 in GND VOL=' '(0.1+(1.8*1000000*time))*sin(2*3.14*2.45E9*time)' '
+x1 in out GND cell
+**** begin user architecture code
+
+
+*.TRAN TSTEP TSTOP <TSTART <TMAX>> <UIC>
+
+.control
+save all
+tran 0.01n 1u
+plot out
+plot in
+plot abs(in) vs out
+plot (out/(0.1+(1.8E6*time)))
+.endc
+
+
+
+** opencircuitdesign pdks install
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  cell.sym # of pins=3
+** sym_path: /foss/designs/cobaia/xschem/cell.sym
+** sch_path: /foss/designs/cobaia/xschem/cell.sch
+.subckt cell in out gnd
+*.iopin out
+*.iopin in
+*.iopin gnd
+C1 net1 in {c0} m=1
+C2 out gnd {c0} m=1
+XM10 net1 net1 gnd net1 sky130_fd_pr__pfet_01v8_lvt L=0.35 W=90 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM1 out out net1 out sky130_fd_pr__pfet_01v8_lvt L=0.35 W=90 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+**** begin user architecture code
+
+.param c0=10p
+
+**** end user architecture code
+.ends
+
+.GLOBAL GND
+.end

@@ -1,0 +1,15 @@
+** sch_path: /foss/designs/tcc_eng/xschem/cell.sch
+**.subckt cell ground o i
+*.iopin ground
+*.iopin o
+*.iopin i
+XM10 net1 net1 ground net1 sky130_fd_pr__pfet_01v8_lvt L=0.35 W=40 nf=5 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM1 o o net1 o sky130_fd_pr__pfet_01v8_lvt L=0.35 W=40 nf=5 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XC3 o ground sky130_fd_pr__cap_mim_m3_1 W=30 L=30 MF=6 m=6
+XC2 net1 i sky130_fd_pr__cap_mim_m3_1 W=30 L=30 MF=1 m=1
+**.ends
+.end
