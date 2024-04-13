@@ -81,10 +81,10 @@ X0 c1_n2350_n2300# m3_n2450_n2400# sky130_fd_pr__cap_mim_m3_1 l=2.3e+07u w=2.3e+
 .ends
 
 .subckt Ota_esq Vin Vip VDD VSS Ibias Vout
-XXM1 Vin m1_1430_n1980# m1_1430_n1980# m1_4370_n2420# sky130_fd_pr__pfet_g5v0d10v5_4LQ75H
+XXM1 Vin m1_1430_n1980# m1_1430_n1980# m1_4520_n2420# sky130_fd_pr__pfet_g5v0d10v5_4LQ75H
 XXM2 Vip m1_1770_n130# m1_1430_n1980# m1_1430_n1980# sky130_fd_pr__pfet_g5v0d10v5_LMT75H
-XXM3 m1_4370_n2420# VSS VSS m1_4370_n2420# sky130_fd_pr__nfet_g5v0d10v5_RVNTYK
-XXM4 VSS VSS m1_1770_n130# m1_4370_n2420# sky130_fd_pr__nfet_g5v0d10v5_RMPAXK
+XXM3 m1_4520_n2420# VSS VSS m1_4520_n2420# sky130_fd_pr__nfet_g5v0d10v5_RVNTYK
+XXM4 VSS VSS m1_1770_n130# m1_4520_n2420# sky130_fd_pr__nfet_g5v0d10v5_RMPAXK
 XXM5 Ibias Ibias Ibias VDD m1_1430_n1980# VDD m1_1430_n1980# Ibias m1_1430_n1980#
 + m1_1430_n1980# Ibias VDD Ibias VDD m1_1430_n1980# Ibias VDD Ibias sky130_fd_pr__pfet_g5v0d10v5_FYUU4F
 XXM6 VDD Ibias Vout Ibias Ibias Ibias VDD VDD VDD VDD Vout Ibias VDD Vout Ibias VDD

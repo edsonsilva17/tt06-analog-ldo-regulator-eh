@@ -44,9 +44,9 @@ Netlists match uniquely.
 Subcircuit pins:
 Circuit 1: cell                            |Circuit 2: cell                            
 -------------------------------------------|-------------------------------------------
+ground                                     |ground                                     
 i                                          |i                                          
 o                                          |o                                          
-ground                                     |ground                                     
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes cell and cell are equivalent.

@@ -1,4 +1,32 @@
-* NGSPICE file created from Ota_esq.ext - technology: sky130A
+* NGSPICE file created from tt_um_edsonsilva17_ldo.ext - technology: sky130A
+
+.subckt sky130_fd_pr__pfet_01v8_lvt_3F9YD3 a_n349_n800# a_n163_n897# a_163_n800# a_221_n897#
++ a_n93_n800# w_n487_n1019# a_n35_n897# a_93_n897# a_35_n800# a_n291_n897# a_291_n800#
++ a_n221_n800#
+X0 a_n93_n800# a_n163_n897# a_n221_n800# w_n487_n1019# sky130_fd_pr__pfet_01v8_lvt ad=2.32e+12p pd=1.658e+07u as=2.32e+12p ps=1.658e+07u w=8e+06u l=350000u
+X1 a_291_n800# a_221_n897# a_163_n800# w_n487_n1019# sky130_fd_pr__pfet_01v8_lvt ad=2.32e+12p pd=1.658e+07u as=2.32e+12p ps=1.658e+07u w=8e+06u l=350000u
+X2 a_n221_n800# a_n291_n897# a_n349_n800# w_n487_n1019# sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=2.32e+12p ps=1.658e+07u w=8e+06u l=350000u
+X3 a_35_n800# a_n35_n897# a_n93_n800# w_n487_n1019# sky130_fd_pr__pfet_01v8_lvt ad=2.32e+12p pd=1.658e+07u as=0p ps=0u w=8e+06u l=350000u
+X4 a_163_n800# a_93_n897# a_35_n800# w_n487_n1019# sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=8e+06u l=350000u
+.ends
+
+.subckt sky130_fd_pr__cap_mim_m3_1_3HBNLG c1_n3050_n3000# m3_n3150_n3100#
+X0 c1_n3050_n3000# m3_n3150_n3100# sky130_fd_pr__cap_mim_m3_1 l=3e+07u w=3e+07u
+.ends
+
+.subckt sky130_fd_pr__cap_mim_m3_1_3MBNLG c1_n3050_n9580# m3_n3150_n9680#
+X0 c1_n3050_n9580# m3_n3150_n9680# sky130_fd_pr__cap_mim_m3_1 l=3e+07u w=3e+07u
+X1 c1_n3050_n9580# m3_n3150_n9680# sky130_fd_pr__cap_mim_m3_1 l=3e+07u w=3e+07u
+X2 c1_n3050_n9580# m3_n3150_n9680# sky130_fd_pr__cap_mim_m3_1 l=3e+07u w=3e+07u
+.ends
+
+.subckt cell ground o i
+XXM1 o o o o o o o o m1_n620_520# o m1_n620_520# m1_n620_520# sky130_fd_pr__pfet_01v8_lvt_3F9YD3
+XXC2 m1_n620_520# i sky130_fd_pr__cap_mim_m3_1_3HBNLG
+XXC3 o ground sky130_fd_pr__cap_mim_m3_1_3MBNLG
+XXM10 m1_n620_520# m1_n620_520# m1_n620_520# m1_n620_520# m1_n620_520# m1_n620_520#
++ m1_n620_520# m1_n620_520# ground m1_n620_520# ground ground sky130_fd_pr__pfet_01v8_lvt_3F9YD3
+.ends
 
 .subckt sky130_fd_pr__pfet_g5v0d10v5_4LQ75H a_n50_n297# a_50_n200# w_n308_n497# a_n108_n200#
 X0 a_50_n200# a_n50_n297# a_n108_n200# w_n308_n497# sky130_fd_pr__pfet_g5v0d10v5 ad=5.8e+11p pd=4.58e+06u as=5.8e+11p ps=4.58e+06u w=2e+06u l=500000u
@@ -94,5 +122,29 @@ XXM7 VSS m1_1770_n130# Vout m1_1770_n130# m1_1770_n130# Vout VSS Vout VSS m1_177
 XXM8 Ibias Ibias Ibias Ibias VDD VDD VDD Ibias VDD VDD Ibias Ibias Ibias Ibias VDD
 + Ibias Ibias Ibias sky130_fd_pr__pfet_g5v0d10v5_FY4V4F
 XXC1 Vout m1_1770_n130# sky130_fd_pr__cap_mim_m3_1_M5BWMD
+.ends
+
+.subckt sky130_fd_pr__nfet_03v3_nvt_VP9Q5R a_n108_n1000# a_50_n1000# a_n242_n1222#
++ a_n50_n1088#
+X0 a_50_n1000# a_n50_n1088# a_n108_n1000# a_n242_n1222# sky130_fd_pr__nfet_03v3_nvt ad=2.9e+12p pd=2.058e+07u as=2.9e+12p ps=2.058e+07u w=1e+07u l=500000u
+.ends
+
+.subckt LDO ldo_out ldo_in VSUBS ldo_ref ldo_ibias
+Xx1 ldo_out ldo_ref ldo_in VSUBS ldo_ibias x1/Vout Ota_esq
+XXM1 ldo_out ldo_in VSUBS x1/Vout sky130_fd_pr__nfet_03v3_nvt_VP9Q5R
+.ends
+
+.subckt top-1 top_in VSUBS top_ibias top_out top_ref
+Xx1 VSUBS x1/o top_in cell
+Xx2 top_out x1/o VSUBS top_ref top_ibias LDO
+.ends
+
+.subckt tt_um_edsonsilva17_ldo clk ena rst_n ua[0] ua[1] ua[2] ua[3] ua[4] ua[5] ua[6]
++ ua[7] ui_in[0] ui_in[1] ui_in[2] ui_in[3] ui_in[4] ui_in[5] ui_in[6] ui_in[7] uio_in[0]
++ uio_in[1] uio_in[2] uio_in[3] uio_in[4] uio_in[5] uio_in[6] uio_in[7] uio_oe[0]
++ uio_oe[1] uio_oe[2] uio_oe[3] uio_oe[4] uio_oe[5] uio_oe[6] uio_oe[7] uio_out[0]
++ uio_out[1] uio_out[2] uio_out[3] uio_out[4] uio_out[5] uio_out[6] uio_out[7] uo_out[0]
++ uo_out[1] uo_out[2] uo_out[3] uo_out[4] uo_out[5] uo_out[6] uo_out[7] VPWR VGND
+Xtop-1_0 ua[1] ua[0] ua[4] ua[2] ua[3] top-1
 .ends
 
